@@ -1,0 +1,83 @@
+public class sortingalgorithm {
+    public static void bubblesort(int arr[]) {
+        for(int i=0; i < arr.length; i++) {
+            for(int j=0; j < arr.length - 1 - i; j++) {
+                if(arr[j] > arr[j+1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+    }
+    
+    public static void main(String[] args) {
+        int arr[] = {5, 4, 3, 2, 1};
+        bubblesort(arr);
+        // Print sorted array
+        for(int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+it print the ascending order of array (1,2,3,4,5)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+public class sortingalgorithm {
+    public static void bubblesort(int arr[]) {
+        for(int i=0; i < arr.length; i++) {
+            int swap=0;
+            for(int j=0; j < arr.length - 1 - i; j++) {
+                if(arr[j] < arr[j+1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+                swap++;
+            }
+        }
+    }
+    
+    public static void main(String[] args) {
+        int arr[] = {5, 6,9,0, 3, 2, 1};
+        bubblesort(arr);
+      
+        for(int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+      
+    }
+}
+it print the descending order of the array :- 9 6 5 3 2 1 0
+it gives the average case time complexity : O(n^2 )
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class sortingalgorithm {
+    public static void bubblesort(int arr[]) {
+        int swapCount = 0;
+        for(int i = 0; i < arr.length - 1; i++) {
+            boolean swapped = false;
+            for(int j = 0; j < arr.length - 1 - i; j++) {
+                if(arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapCount++;
+                    swapped = true;
+                }
+            }
+            // If no swaps occurred in this pass, the array is sorted
+            if(!swapped) {
+                break;
+            }
+        }
+        System.out.println("Total swaps: " + swapCount);
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5};
+        bubblesort(arr);
+    }
+}
+it is for the sorted array and it gives the best case time complexity : o(n)
